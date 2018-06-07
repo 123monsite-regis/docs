@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Development on Prestashop Developer Documentation</title>
+    <link>http://devdocs.prestashop.com/1.7/development/</link>
+    <description>Recent content in Development on Prestashop Developer Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 15 Mar 2018 17:11:14 +0100</lastBuildDate>
+    
+	<atom:link href="http://devdocs.prestashop.com/1.7/development/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Native module translation</title>
+      <link>http://devdocs.prestashop.com/1.7/development/native_module_translation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://devdocs.prestashop.com/1.7/development/native_module_translation/</guid>
+      <description>Module translation The module&amp;rsquo;s text strings are written in English, but you might want French, Spanish or Polish shop owners to use your module too. You therefore have to translate those strings into those languages, both the front office and the back office strings. Ideally, you should translate your module in all the languages that are installed on your shop. This could be a tedious task, but a whole system has been put in place in order to help you out.</description>
+    </item>
+    
+    <item>
+      <title>The PrestaShop architecture</title>
+      <link>http://devdocs.prestashop.com/1.7/development/prestashop_architecture/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://devdocs.prestashop.com/1.7/development/prestashop_architecture/</guid>
+      <description>The PrestaShop architecture The PrestaShop developers have done their best to clearly and intuitively separate the various parts of the software.
+Here is how the files are organized:
+ /admin (the name is customized on installation): contains all the PrestaShop files pertaining to the back office. When accessing this folder with your browser, you will be asked to provide proper identification, for security reasons. Important: you should make sure to protect that folder with a .</description>
+    </item>
+    
+  </channel>
+</rss>

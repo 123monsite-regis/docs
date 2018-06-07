@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Extension concepts on Prestashop Developer Documentation</title>
+    <link>http://devdocs.prestashop.com/1.7/modules/concepts/</link>
+    <description>Recent content in Extension concepts on Prestashop Developer Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 18 Apr 2018 09:19:00 +0200</lastBuildDate>
+    
+	<atom:link href="http://devdocs.prestashop.com/1.7/modules/concepts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Configuration</title>
+      <link>http://devdocs.prestashop.com/1.7/modules/concepts/configuration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://devdocs.prestashop.com/1.7/modules/concepts/configuration/</guid>
+      <description>Configuration Data can be saved in the shop database without requiring a module specific table to be created.
+The table configuration contains a list of key =&amp;gt; value(s) properties which can be accessed from anywhere, including in a module. The Configuration class is the interface allowing each module developer to get or store data in this table.
+Store configuration data Configuration::updateValue(string $key, mixed $value);  $key will be the reference to your data to reuse later.</description>
+    </item>
+    
+    <item>
+      <title>Widgets</title>
+      <link>http://devdocs.prestashop.com/1.7/modules/concepts/widgets/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://devdocs.prestashop.com/1.7/modules/concepts/widgets/</guid>
+      <description>Widgets Widget is an advanced concept introduced on PrestaShop 1.7, extending hooks feature.
+Limitation of hooks In their basic use, a display hook will be shown at a specific place in the template. If a module wants to display the same additional content on several places, whatever the merchant chose, it still has to register and implement all the possible hooks.
+With widgets, module developers can display content everywhere the module is asked to do so.</description>
+    </item>
+    
+    <item>
+      <title>Overrides</title>
+      <link>http://devdocs.prestashop.com/1.7/modules/concepts/overrides/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://devdocs.prestashop.com/1.7/modules/concepts/overrides/</guid>
+      <description>Overrides Overriding is a way to &amp;ldquo;override&amp;rdquo; class files and controller files. PrestaShop&amp;rsquo;s ingenious class auto-loading function makes the &amp;ldquo;switch&amp;rdquo; to other files fairly simple. Thanks to PrestaShop&amp;rsquo;s fully object-oriented code, you can rely on object inheritance to modify and add new behaviors, using the properties and methods of the various existing classes.
+Important note There are limitations and risks of using overrides. Keep them for your own shop.</description>
+    </item>
+    
+  </channel>
+</rss>

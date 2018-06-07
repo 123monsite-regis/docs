@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Coding standards on Prestashop Developer Documentation</title>
+    <link>http://devdocs.prestashop.com/1.7/development/coding_standards/</link>
+    <description>Recent content in Coding standards on Prestashop Developer Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 05 Mar 2018 18:58:38 +0100</lastBuildDate>
+    
+	<atom:link href="http://devdocs.prestashop.com/1.7/development/coding_standards/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Commits &amp; Pull Requests</title>
+      <link>http://devdocs.prestashop.com/1.7/development/coding_standards/commits_and_pull_requests/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://devdocs.prestashop.com/1.7/development/coding_standards/commits_and_pull_requests/</guid>
+      <description>Commits &amp;amp; Pull Requests conventions Commits In the past, we used to have only one commit by pull request. This was a bad habit. We now require contributors to make atomic commits, so you will surely have more than one commit in a single pull request. This will be helpful to review, cherry-pick or revert (we hope to never have to do that 😉) the changes.
+What&amp;rsquo;s an atomic commit?</description>
+    </item>
+    
+  </channel>
+</rss>

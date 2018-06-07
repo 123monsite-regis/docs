@@ -1,0 +1,2442 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.41" />
+    <meta name="description" content="Prestashop Technical Documentation">
+<meta name="author" content="PrestaShop">
+
+    <link rel="shortcut icon" href="/images/preston-logo@2x.png" type="image/x-icon" />
+<link rel="icon" href="/images/preston-logo@2x.png" type="image/x-icon" />
+
+    <title>Use hooks on modern pages :: Prestashop Developer Documentation</title>
+
+    
+    <link href="/css/font-awesome.min.css?1528392868" rel="stylesheet">
+    <link href="/css/hybrid.css?1528392868" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1528392868" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1528392868" rel="stylesheet">
+    <link href="/css/auto-complete.css?1528392868" rel="stylesheet">
+    <link href="/css/style.css?1528392868" rel="stylesheet">
+
+    <script src="/js/jquery-2.x.min.js?1528392868"></script>
+
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/1.7/modules/concepts/hooks/use_hooks_on_modern_pages/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">PrestaShop DevDocs</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1528392868"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1528392868"></script>
+<script type="text/javascript">
+    
+        var baseurl = '\/';
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1528392868"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+      
+        
+          
+            
+              
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/basics/" title="Basics" class="dd-item
+        
+        
+        
+        ">
+      <a href="/1.7/basics/">
+          <b>1. </b>Basics
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/basics/introduction/" title="Introduction" class="dd-item ">
+        <a href="/1.7/basics/introduction/">
+        Introduction
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/basics/installation/" title="Installation" class="dd-item
+        
+        
+        
+        ">
+      <a href="/1.7/basics/installation/">
+          Installation
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/basics/installation/configuration/" title="Configuration" class="dd-item ">
+        <a href="/1.7/basics/installation/configuration/">
+        Configuration
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+              
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/development/" title="Development" class="dd-item
+        
+        
+        
+        ">
+      <a href="/1.7/development/">
+          <b>2. </b>Development
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/development/coding_standards/" title="Coding standards" class="dd-item
+        
+        
+        
+        ">
+      <a href="/1.7/development/coding_standards/">
+          Coding standards
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/development/coding_standards/commits_and_pull_requests/" title="Commits &amp; Pull Requests" class="dd-item ">
+        <a href="/1.7/development/coding_standards/commits_and_pull_requests/">
+        Commits &amp; Pull Requests
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/development/native_module_translation/" title="Native module translation" class="dd-item ">
+        <a href="/1.7/development/native_module_translation/">
+        Native module translation
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/development/database/" title="Database" class="dd-item
+        
+        
+        
+        ">
+      <a href="/1.7/development/database/">
+          Database
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/development/database/dbquery/" title="DBQuery class" class="dd-item ">
+        <a href="/1.7/development/database/dbquery/">
+        DBQuery class
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/development/database/objectmodel/" title="ObjectModel class" class="dd-item ">
+        <a href="/1.7/development/database/objectmodel/">
+        ObjectModel class
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/development/database/structure/" title="Database structure" class="dd-item ">
+        <a href="/1.7/development/database/structure/">
+        Database structure
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/development/prestashop_architecture/" title="The PrestaShop architecture" class="dd-item ">
+        <a href="/1.7/development/prestashop_architecture/">
+        The PrestaShop architecture
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+              
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/testing/" title="Testing" class="dd-item
+        
+        
+        
+        ">
+      <a href="/1.7/testing/">
+          <b>3. </b>Testing
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+              
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/modules/" title="Modules" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/1.7/modules/">
+          <b>4. </b>Modules
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/modules/creation/" title="Getting started" class="dd-item
+        
+        
+        
+        ">
+      <a href="/1.7/modules/creation/">
+          Getting started
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/modules/creation/module_file_structure/" title="Folder structure" class="dd-item ">
+        <a href="/1.7/modules/creation/module_file_structure/">
+        Folder structure
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/modules/creation/adding_configuration_page/" title="Adding a configuration page" class="dd-item ">
+        <a href="/1.7/modules/creation/adding_configuration_page/">
+        Adding a configuration page
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/modules/creation/displaying_content_in_front_office/" title="Displaying content on the front office" class="dd-item ">
+        <a href="/1.7/modules/creation/displaying_content_in_front_office/">
+        Displaying content on the front office
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/modules/creation/enabling_auto_update/" title="Enabling the Auto-Update" class="dd-item ">
+        <a href="/1.7/modules/creation/enabling_auto_update/">
+        Enabling the Auto-Update
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/modules/creation/module_translation/" title="Module translation" class="dd-item ">
+        <a href="/1.7/modules/creation/module_translation/">
+        Module translation
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/modules/concepts/" title="Extension concepts" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/1.7/modules/concepts/">
+          Extension concepts
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/modules/concepts/configuration/" title="Configuration" class="dd-item ">
+        <a href="/1.7/modules/concepts/configuration/">
+        Configuration
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/modules/concepts/hooks/" title="Hooks" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/1.7/modules/concepts/hooks/">
+          Hooks
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/modules/concepts/hooks/list_of_hooks/" title="List of hooks" class="dd-item ">
+        <a href="/1.7/modules/concepts/hooks/list_of_hooks/">
+        List of hooks
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/modules/concepts/hooks/use_hooks_on_modern_pages/" title="Use hooks on modern pages" class="dd-item active">
+        <a href="/1.7/modules/concepts/hooks/use_hooks_on_modern_pages/">
+        Use hooks on modern pages
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/modules/concepts/hooks/alter_forms_on_modern_pages/" title="Alter forms on modern pages" class="dd-item ">
+        <a href="/1.7/modules/concepts/hooks/alter_forms_on_modern_pages/">
+        Alter forms on modern pages
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/modules/concepts/widgets/" title="Widgets" class="dd-item ">
+        <a href="/1.7/modules/concepts/widgets/">
+        Widgets
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/modules/concepts/controllers/" title="Controllers" class="dd-item
+        
+        
+        
+        ">
+      <a href="/1.7/modules/concepts/controllers/">
+          Controllers
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/modules/concepts/controllers/front_controllers/" title="Front controllers" class="dd-item ">
+        <a href="/1.7/modules/concepts/controllers/front_controllers/">
+        Front controllers
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/modules/concepts/overrides/" title="Overrides" class="dd-item ">
+        <a href="/1.7/modules/concepts/overrides/">
+        Overrides
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/modules/paiement/" title="Payment modules" class="dd-item
+        
+        
+        
+        ">
+      <a href="/1.7/modules/paiement/">
+          Payment modules
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/modules/templating/" title="Templates in modules" class="dd-item
+        
+        
+        
+        ">
+      <a href="/1.7/modules/templating/">
+          Templates in modules
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/modules/testing/" title="Testing" class="dd-item
+        
+        
+        
+        ">
+      <a href="/1.7/modules/testing/">
+          Testing
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+              
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/themes/" title="Themes" class="dd-item
+        
+        
+        
+        ">
+      <a href="/1.7/themes/">
+          <b>5. </b>Themes
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/themes/guidelines/" title="Guidelines and coding standards" class="dd-item ">
+        <a href="/1.7/themes/guidelines/">
+        Guidelines
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/themes/starter_theme/" title="Starter Theme" class="dd-item
+        
+        
+        
+        ">
+      <a href="/1.7/themes/starter_theme/">
+          Starter Theme
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/themes/getting_started/" title="Getting started with theme development" class="dd-item
+        
+        
+        
+        ">
+      <a href="/1.7/themes/getting_started/">
+          Getting started
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/themes/getting_started/setting_up_your_local_environment/" title="Setting up your local environment" class="dd-item ">
+        <a href="/1.7/themes/getting_started/setting_up_your_local_environment/">
+        Set up your local environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/themes/hooks/" title="Theme Hooks" class="dd-item
+        
+        
+        
+        ">
+      <a href="/1.7/themes/hooks/">
+          Theme Hooks
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/themes/javascript_events/" title="Javascript events" class="dd-item
+        
+        
+        
+        ">
+      <a href="/1.7/themes/javascript_events/">
+          Javascript events
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/themes/migration_from_16/" title="Migrating from PrestaShop 1.6" class="dd-item ">
+        <a href="/1.7/themes/migration_from_16/">
+        Migrating from 1.6
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/themes/rtl/" title="RTL support" class="dd-item ">
+        <a href="/1.7/themes/rtl/">
+        RTL support
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+              
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/documentation/" title="Documentation" class="dd-item
+        
+        
+        
+        ">
+      <a href="/1.7/documentation/">
+          <b>6. </b>Documentation
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/documentation/why/" title="Why write documentation" class="dd-item ">
+        <a href="/1.7/documentation/why/">
+        Why write documentation
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/documentation/how/" title="How to contribute" class="dd-item ">
+        <a href="/1.7/documentation/how/">
+        How to contribute
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/documentation/shortcodes/" title="Shortcodes" class="dd-item
+        
+        
+        
+        ">
+      <a href="/1.7/documentation/shortcodes/">
+          Shortcodes
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+      
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p><a href="https://github.com/PrestaShop/PrestaShop/"><i class="fa fa-github" aria-hidden="true"></i> PrestShop on GitHub</a></p>
+<p><a href="http://forge.prestashop.com/secure/CreateIssue!default.jspa"><i class="fa fa-bug" aria-hidden="true"></i> Report a bug</a></p>
+<p><a href="https://gitter.im/PrestaShop/General"><i class="fa fa-comment" aria-hidden="true"></i> Join us on Gitter</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+      <section id="body">
+      <div id="overlay"></div>
+      <div class="padding highlightable">
+        
+<div>
+  <div id="top-bar">
+    
+      
+      
+      
+      <div id="top-github-link">
+        <a class="github-link" title='Improve this page' href="https://github.com/PrestaShop/docs/edit/hugo/src/content/1.7/modules/concepts/hooks/use_hooks_on_modern_pages.md" target="blank">
+          <i class="fa fa-pencil"></i>
+          <span id="top-github-link-text">Improve this page</span>
+        </a>
+        <a class="how-to-improve" href="/1.7/documentation/how/">
+          <i class="fa fa-question-circle"></i>
+          <span>How</span>
+        </a>
+      </div>
+      
+    
+    <div id="breadcrumbs" itemscope="" itemtype="http://schema.org/breadcrumb">
+      <span id="sidebar-toggle-span">
+        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+          <i class="fa fa-bars"></i>
+        </a>
+      </span>
+      <span class="links">
+        
+            
+            
+              
+              
+            
+            
+              
+              
+            
+            
+              
+              
+            
+            
+              
+              
+            
+            
+              
+              
+            
+            
+              <a href='/'>Home</a> > <a href='/1.7/'>1.7</a> > <a href='/1.7/modules/'>Modules</a> > <a href='/1.7/modules/concepts/'>Extension concepts</a> > <a href='/1.7/modules/concepts/hooks/'>Hooks</a> > Use hooks on modern pages
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+      </span>
+    </div>
+  </div>
+</div>
+
+
+
+
+        
+
+        
+        
+          
+            <div id="toc">
+  <div class="wrapper">
+    <div id="toc-title">Table of Contents</div>
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#use-hooks-on-modern-pages">Use hooks on modern pages</a>
+<ul>
+<li><a href="#better-modules-on-modern-pages">Better modules on modern pages</a>
+<ul>
+<li><a href="#first-step-select-the-right-hook">First step: select the right hook</a></li>
+<li><a href="#second-step-create-and-register-the-hook">Second step: create and register the Hook</a></li>
+<li><a href="#third-step-create-your-own-product-serializer">Third step: create your own product serializer</a>
+<ul>
+<li><a href="#using-doctrine-dbal-to-retrieve-data">Using Doctrine (DBAL) to retrieve data</a></li>
+<li><a href="#using-the-symfony-components-to-create-an-xml-export-file">Using the Symfony components to create an XML export file</a></li>
+<li><a href="#render-the-icon-using-twig-templating-engine">Render the icon using Twig templating engine</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+
+    <div id="navigation">
+  
+  
+
+  
+
+  
+    
+    
+      
+        
+        
+      
+      
+      
+      
+        
+      
+      
+
+      
+        
+    
+    
+      
+        
+        
+      
+      
+      
+      
+        
+      
+      
+
+      
+        
+    
+    
+      
+        
+          
+          
+        
+      
+      
+      
+      
+        
+      
+      
+
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+    
+  
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+        
+      
+      
+
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+        
+      
+      
+      
+      
+        
+      
+      
+
+      
+        
+    
+    
+      
+        
+          
+          
+        
+      
+      
+      
+      
+      
+
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+    
+  
+      
+        
+    
+    
+      
+        
+        
+      
+      
+      
+      
+        
+      
+      
+
+      
+        
+    
+    
+      
+        
+          
+          
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+        
+      
+      
+      
+      
+      
+
+      
+        
+    
+    
+      
+        
+          
+          
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+          
+          
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+        
+      
+      
+
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+        
+      
+      
+
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+    
+  
+      
+    
+  
+      
+    
+  
+
+  
+  
+  <a class="nav nav-next" href="/1.7/modules/concepts/hooks/alter_forms_on_modern_pages/" title="Alter forms on modern pages" style="margin-right: 0px;">
+    <i class="fa fa-chevron-right"></i>
+    Next article
+  </a>
+  
+</div>
+
+  </div>
+</div>
+
+          
+        
+
+        <div id="body-inner">
+
+          
+
+
+
+
+
+
+<h1 id="use-hooks-on-modern-pages">Use hooks on modern pages</h1>
+
+<p>You know you can already customize your PrestaShop store thanks to many hooks: the good news is that you can still use hooks like you did in the earlier versions of PrestaShop in modern pages.</p>
+
+<p>Starting from PrestaShop 1.7.3, you can access the modern Services Container into your modules and so on access powerful and customizable features available in Symfony:</p>
+
+<ul>
+<li><a href="https://twig.symfony.com/">Twig</a>, the most popular templating engine;</li>
+<li><a href="https://swiftmailer.symfony.com/">Swiftmailer</a>, a feature-rich mailer;</li>
+<li><a href="http://www.doctrine-project.org/projects/orm.html">Doctrine ORM</a> and <a href="http://www.doctrine-project.org/projects/dbal.html">Doctrine DBAL</a> to manage your database;</li>
+<li><a href="https://symfony.com/doc/3.3/components/filesystem.html">Filesystem</a> and <a href="https://symfony.com/doc/3.3/components/finder.html">Finder</a> libraries to manage all filesystem operations;</li>
+<li><a href="https://seldaek.github.io/monolog/">Monolog</a> for every logging operations;</li>
+<li><a href="https://symfony.com/doc/3.3/components/serializer.html">Serializer</a> library for whom who need to manipulate Json and Xml formats&hellip;</li>
+</ul>
+
+<p>Of course, you also have access to every service used by the Core of PrestaShop. This means that you can rely on all services defined in <code>PrestaShopBundle/config/</code> folder, except from the ones declared in <code>adapter</code> folder: they will be removed at some point.</p>
+
+<blockquote>
+<p>If you don&rsquo;t know what is a service, take a look at the Symfony documentation about the <a href="http://symfony.com/doc/3.3/service_container.html">services container</a>.</p>
+</blockquote>
+
+<h2 id="better-modules-on-modern-pages">Better modules on modern pages</h2>
+
+<p>Let&rsquo;s say your customer want an xml export button directly available from list of products on Product Catalog page: such a common need regarding the number of related modules in the Store.</p>
+
+<p>How hard it can be to develop a module that provide this button? Well, it&rsquo;s not! Let&rsquo;s do this feature together.</p>
+
+<h3 id="first-step-select-the-right-hook">First step: select the right hook</h3>
+
+<p>Accessing the Product Catalog page in <em>debug mode</em> we can access the list of available hooks in the debug toolbar:</p>
+
+<ul>
+<li>moduleRoutes</li>
+<li>displayBackOfficeHeader</li>
+<li>displayBackOfficeTop</li>
+<li>actionAdminControllerSetMedia</li>
+<li>displayDashboardToolbarTopMenu</li>
+<li>displayDashboardTop</li>
+<li>hookdisplayDashboardToolbarIcons</li>
+<li>displayBackOfficeFooter</li>
+<li>displayAdminNavBarBeforeEnd</li>
+<li>displayAdminAfterHeader</li>
+<li>actionDispatcherBefore</li>
+<li>actionDispatcherAfter</li>
+</ul>
+
+<p>As we need to act on Dashboard but after the header, in the icons toolbar (with others export options) <code>hookdisplayDashboardToolbarIcons</code> sounds like the hook we are looking for.</p>
+
+<h3 id="second-step-create-and-register-the-hook">Second step: create and register the Hook</h3>
+
+<p>Create a <a href="http://doc.prestashop.com/display/PS17/Creating+a+first+module">new module</a> called <code>foo</code> and register the hook. You should end up with this kind of code in your module:</p>
+
+<pre><code class="language-php">// foo.php
+
+/* ... */
+
+/**
+ * Module installation.
+ *
+ * @return bool Success of the installation
+ */
+public function install()
+{
+    return parent::install() &amp;&amp; $this-&gt;registerHook('displayDashboardToolbarIcons');
+}
+
+/**
+ * Add an &quot;XML export&quot; action in Product Catalog page.
+ *
+ * @return bool Success of the installation
+ */
+public function hookDisplayDashboardToolbarIcons($hookParams)
+{
+  if ($this-&gt;isSymfonyContext() &amp;&amp; $hookParams['route'] === 'admin_product_catalog') {
+      // to be continued
+  }
+}
+</code></pre>
+
+<blockquote>
+<p>&lsquo;route&rsquo; property is only available for modern pages to find the route related to a page look at the debug toolbar.</p>
+</blockquote>
+
+<h3 id="third-step-create-your-own-product-serializer">Third step: create your own product serializer</h3>
+
+<p>At this point, this is basic PHP code we need to produce. We need to retrieve the list of products from database, and serialize them into XML and dump into a file sent to the user.</p>
+
+<h4 id="using-doctrine-dbal-to-retrieve-data">Using Doctrine (DBAL) to retrieve data</h4>
+
+<p>Even if using old way to retrieve data is still valid (<code>Product::getProducts</code> or through the webservice), we&rsquo;d like to introduce a best practice here: using a repository and get ride of the Object model. This has a lot of advantages, you rely on database instead of model and you&rsquo;ll have better performances and control on your data.</p>
+
+<pre><code class="language-php">// src/Repository/ProductRepository.php
+namespace Foo\Repository;
+
+use Doctrine\DBAL\Connection;
+
+class ProductRepository
+{
+    /**
+     * @var Connection the Database connection.
+     */
+    private $connection;
+
+    /**
+     * @var string the Database prefix.
+     */
+    private $databasePrefix;
+
+    public function __construct(Connection $connection, $databasePrefix)
+    {
+        $this-&gt;connection = $connection;
+        $this-&gt;databasePrefix = $databasePrefix;
+    }
+
+    /**
+     * @param int $langId the lang id
+     * @return array the list of products
+     */
+    public function findAllbyLangId(int $langId)
+    {
+        $prefix = $this-&gt;databasePrefix;
+        $productTable = &quot;${prefix}product&quot;;
+        $productLangTable = &quot;${prefix}product_lang&quot;;
+
+        $query = &quot;SELECT p.* FROM ${productTable} p LEFT JOIN ${productLangTable} pl ON (p.`id_product` = pl.`id_product`) WHERE pl.`id_lang` = :langId&quot;;
+        $statement = $this-&gt;connection-&gt;prepare($query);
+        $statement-&gt;bindValue('langId', $langId);
+        $statement-&gt;execute();
+        
+        return $statement-&gt;fetchAll();
+    }
+}
+</code></pre>
+
+<p>And declare your repository as a service:</p>
+
+<pre><code class="language-yaml"># modules/foo/config/services.yml
+
+services:
+    product_repository:
+        class: Foo\Repository\ProductRepository
+        arguments: ['@doctrine.dbal.default_connection', '%database_prefix%']
+</code></pre>
+
+<p>You can now use it in your module (and everywhere in PrestaShop modern pages!):</p>
+
+<pre><code class="language-php">// foo.php
+
+/* ... */
+/**
+ * Get the list of products for a specific lang.
+ */
+public function hookDisplayDashboardToolbarIcons($hookParams)
+{
+    if ($this-&gt;isSymfonyContext() &amp;&amp; $hookParams['route'] === 'admin_product_catalog') {
+        $products = $this-&gt;get('product_repository')-&gt;findAllByLangId(1);
+        dump($products);
+    }
+}
+</code></pre>
+
+<p>In Product Catalog Page you should see the list of Products in debug toolbar in &ldquo;Dump&rdquo; section:</p>
+
+<p><img src="https://i.imgur.com/un7NcIL.png" alt="Get products in Dump section" /></p>
+
+<h4 id="using-the-symfony-components-to-create-an-xml-export-file">Using the Symfony components to create an XML export file</h4>
+
+<p>Now we retrieve the product list from our module and that we are able to display the information into the back office,
+we could already create our XML file with raw PHP. Let&rsquo;s see how we can do it using the components provided by Symfony &ldquo;out of box&rdquo;.</p>
+
+<pre><code class="language-php">// foo.php
+
+/* ... */
+/**
+ * Creates an XML file with list of products in &quot;upload&quot; folder.
+ *
+ * @return bool Success of the installation
+ */
+public function hookDisplayDashboardToolbarIcons($hookParams)
+{
+    if ($this-&gt;isSymfonyContext() &amp;&amp; $hookParams['route'] === 'admin_product_catalog') {
+        $products = $this-&gt;get('product_repository')-&gt;findAllByLangId(1);
+
+        $productsXml = $this-&gt;get('serializer')-&gt;serialize(
+            $products,
+            'xml',
+            [
+                'xml_root_node_name' =&gt; 'products',
+                'xml_format_output' =&gt; true,
+            ]
+        );
+        $this-&gt;get('filesystem')-&gt;dumpFile(_PS_UPLOAD_DIR_.'products.xml', $productsXml);
+    }
+}
+</code></pre>
+
+<div class="notices info" ><p>Note: the <code>serializer</code> service is not enabled in PrestaShop 1.7.3 but will be enabled in 1.7.4. If you really want to enable it in 1.7.3,uncomment the following configuration line in your <code>services.yml</code> file of your Shop.</p>
+</div>
+
+
+<pre><code class="language-yaml"># app/config/services.yml
+services:
+
+# Enables the serializer
+
+framework:
+    serializer: { enable_annotations: true }
+</code></pre>
+
+<h4 id="render-the-icon-using-twig-templating-engine">Render the icon using Twig templating engine</h4>
+
+<p>Now we have serialized our products, it&rsquo;s time to render an Icon link with the file to download!</p>
+
+<p>We could (of course) use Smarty to render a template, but it&rsquo;s a chance to discover Twig which is also available as a service. First, let&rsquo;s refactor and finalize our hook call:</p>
+
+<pre><code class="language-php">/**
+ * Make products export in XML.
+ *
+ * @param $params array
+ */
+public function hookDisplayDashboardToolbarIcons($params)
+{
+    if ($this-&gt;isSymfonyContext() &amp;&amp; $params['route'] === 'admin_product_catalog') {
+        $products = $this-&gt;getProducts(1);
+        $productsXml = $this-&gt;serializeProducts($products);
+        $filepath = _PS_ROOT_DIR_.'/products.xml';
+
+        $this-&gt;writeFile($productsXml, $filepath);
+
+        return $this-&gt;get('twig')-&gt;render('@PrestaShop/Foo/download_link.twig',[
+            'filepath' =&gt; _PS_BASE_URL_.'/products.xml',
+        ]);
+    }
+}
+</code></pre>
+
+<div class="notices info" ><p>We have extracted business logic into specific functions.</p>
+</div>
+
+
+<p>And now, the template:</p>
+
+<pre><code class="language-twig">{# in views/PrestaShop/Foo/download_link.twig #}
+&lt;a id=&quot;desc-product-export&quot; class=&quot;list-toolbar-btn&quot; href=&quot;{{ filepath }}&quot; download&gt;
+  &lt;b data-toggle=&quot;pstooltip&quot; class=&quot;label-tooltip&quot; data-original-title=&quot;{{ &quot;Export XML&quot;|trans({}, 'Module.Foo' }}&quot; data-html=&quot;true&quot; data-placement=&quot;top&quot;&gt;
+    &lt;i class=&quot;material-icons&quot;&gt;cloud_upload&lt;/i&gt;
+  &lt;/b&gt;
+&lt;/a&gt;
+</code></pre>
+
+<div class="notices info" ><p>We have used a key for translation, making our own translations available in back office when using Twig.</p>
+</div>
+
+
+<p><img src="https://i.imgur.com/5HExjcC.png" alt="Export XML action button" /></p>
+
+<p>And &ldquo;voila!&rdquo;, the module could be of course improved with so many features, adding filters on export for instance, using the <code>request</code> hook parameter and updating the Product repository.</p>
+
+
+<footer class="last-updated">
+	
+<div>
+  Last updated on April 18, 2018
+  :
+  <a href="https://github.com/PrestaShop/docs/commit/ca389fc69de1f480cb1e443cf1f5f910142b3e4f">"Add concepts chapter and move hooks in it" (ca389fc)</a>
+  
+</div>
+
+
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1528392868"></script>
+    <script src="/js/perfect-scrollbar.min.js?1528392868"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1528392868"></script>
+    <script src="/js/jquery.sticky.js?1528392868"></script>
+    <script src="/js/featherlight.min.js?1528392868"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1528392868"></script>
+    <script src="/js/highlight.pack.js?1528392868"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js?1528392868"></script>
+    <script src="/js/learn.js?1528392868"></script>
+    <script src="/js/hugo-learn.js?1528392868"></script>
+
+    <link href="/mermaid/mermaid.css?1528392868" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1528392868"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-2753771-44', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+  </body>
+</html>
+

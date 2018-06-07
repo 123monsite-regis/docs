@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Getting started with theme development on Prestashop Developer Documentation</title>
+    <link>http://devdocs.prestashop.com/1.7/themes/getting_started/</link>
+    <description>Recent content in Getting started with theme development on Prestashop Developer Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 08 Mar 2018 19:05:50 +0100</lastBuildDate>
+    
+	<atom:link href="http://devdocs.prestashop.com/1.7/themes/getting_started/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Setting up your local environment</title>
+      <link>http://devdocs.prestashop.com/1.7/themes/getting_started/setting_up_your_local_environment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://devdocs.prestashop.com/1.7/themes/getting_started/setting_up_your_local_environment/</guid>
+      <description>Setting up your local environment Now that you intend to building a theme for PrestaShop, you are better off keeping all your development work on your machine. The main advantage is that it makes it possible for you to entirely bypass the process of uploading your files on your online server in order to test your changes. Another advantage is that a local test environment enables you to test code without the risk of breaking your production store.</description>
+    </item>
+    
+  </channel>
+</rss>

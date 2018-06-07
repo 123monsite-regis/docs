@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Controllers on Prestashop Developer Documentation</title>
+    <link>http://devdocs.prestashop.com/1.7/modules/concepts/controllers/</link>
+    <description>Recent content in Controllers on Prestashop Developer Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 24 Apr 2018 10:44:43 +0100</lastBuildDate>
+    
+	<atom:link href="http://devdocs.prestashop.com/1.7/modules/concepts/controllers/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Front controllers</title>
+      <link>http://devdocs.prestashop.com/1.7/modules/concepts/controllers/front_controllers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://devdocs.prestashop.com/1.7/modules/concepts/controllers/front_controllers/</guid>
+      <description>Front controllers These class are accessible from the front-office and add features to the customers.
+Creating a front controller In order to have a front controller read by PrestaShop, these 3 rules have to be followed:
+ it is stored in the subfolder controllers/front/ of the module. in CamelCase, the class name follows this format: &amp;lt;ModuleName&amp;gt;&amp;lt;FileName&amp;gt;ModuleFrontController. it extends the class ModuleFrontController.  Minimum controller example Let&amp;rsquo;s say we want a controller responsible of payments validation in our module cheque.</description>
+    </item>
+    
+  </channel>
+</rss>

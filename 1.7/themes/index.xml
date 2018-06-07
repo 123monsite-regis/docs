@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Themes on Prestashop Developer Documentation</title>
+    <link>http://devdocs.prestashop.com/1.7/themes/</link>
+    <description>Recent content in Themes on Prestashop Developer Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 24 Apr 2018 11:07:21 +0100</lastBuildDate>
+    
+	<atom:link href="http://devdocs.prestashop.com/1.7/themes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Guidelines and coding standards</title>
+      <link>http://devdocs.prestashop.com/1.7/themes/guidelines/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://devdocs.prestashop.com/1.7/themes/guidelines/</guid>
+      <description>Guidelines and coding standards Compatibility PHP Code Your PHP code should be compatible with the following versions:
+ PrestaShop 1.7.0  ~ 1.7.3  : at least PHP 5.4 PrestaShop 1.7.4  : at least PHP 5.6  HTML / CSS / Javascript Your HTML/CSS/JS code should work with at least:
+ IE9+ Edge Firefox 45 Chrome 29.  Mobile-wise:
+ iOS 8.4 Android Browser 4.4  Standards General Use spaces for indentation in every language (PHP, HTML, CSS, etc.</description>
+    </item>
+    
+    <item>
+      <title>Migrating from PrestaShop 1.6</title>
+      <link>http://devdocs.prestashop.com/1.7/themes/migration_from_16/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://devdocs.prestashop.com/1.7/themes/migration_from_16/</guid>
+      <description>Migrating from PrestaShop 1.6 PrestaShop 1.7 introduces a totally reworked theme system from version 1.6, with the goal of making PrestaShop upgrades easier, and making it easier and faster to create a brand new theme.
+The huge change to the theme system means that there is no easy way to migrate your PrestaShop 1.6 theme to PrestaShop 1.7.
+When using the automatic upgrade from PrestaShop 1.6 to 1.7, your theme will be switched to the new default theme, called &amp;ldquo;Classic&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>RTL support</title>
+      <link>http://devdocs.prestashop.com/1.7/themes/rtl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://devdocs.prestashop.com/1.7/themes/rtl/</guid>
+      <description>RTL support PrestaShop supports RTL (Right-to-left) themes natively.
+RTL stylesheets There are two ways of customizing your theme for RTL: either by adding an override file that is only loaded for RTL languages, or by using completely different version of the theme&amp;rsquo;s stylesheets.
+CSS override file PrestaShop will try to load a css file named rtl.css after your theme&amp;rsquo;s ones when displayed in an RTL language. You can use this file to place any style override you need for RTL.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,2471 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.41" />
+    <meta name="description" content="Prestashop Technical Documentation">
+<meta name="author" content="PrestaShop">
+
+    <link rel="shortcut icon" href="/images/preston-logo@2x.png" type="image/x-icon" />
+<link rel="icon" href="/images/preston-logo@2x.png" type="image/x-icon" />
+
+    <title>Adding a configuration page :: Prestashop Developer Documentation</title>
+
+    
+    <link href="/css/font-awesome.min.css?1528392868" rel="stylesheet">
+    <link href="/css/hybrid.css?1528392868" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1528392868" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1528392868" rel="stylesheet">
+    <link href="/css/auto-complete.css?1528392868" rel="stylesheet">
+    <link href="/css/style.css?1528392868" rel="stylesheet">
+
+    <script src="/js/jquery-2.x.min.js?1528392868"></script>
+
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/1.7/modules/creation/adding_configuration_page/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">PrestaShop DevDocs</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1528392868"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1528392868"></script>
+<script type="text/javascript">
+    
+        var baseurl = '\/';
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1528392868"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+      
+        
+          
+            
+              
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/basics/" title="Basics" class="dd-item
+        
+        
+        
+        ">
+      <a href="/1.7/basics/">
+          <b>1. </b>Basics
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/basics/introduction/" title="Introduction" class="dd-item ">
+        <a href="/1.7/basics/introduction/">
+        Introduction
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/basics/installation/" title="Installation" class="dd-item
+        
+        
+        
+        ">
+      <a href="/1.7/basics/installation/">
+          Installation
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/basics/installation/configuration/" title="Configuration" class="dd-item ">
+        <a href="/1.7/basics/installation/configuration/">
+        Configuration
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+              
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/development/" title="Development" class="dd-item
+        
+        
+        
+        ">
+      <a href="/1.7/development/">
+          <b>2. </b>Development
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/development/coding_standards/" title="Coding standards" class="dd-item
+        
+        
+        
+        ">
+      <a href="/1.7/development/coding_standards/">
+          Coding standards
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/development/coding_standards/commits_and_pull_requests/" title="Commits &amp; Pull Requests" class="dd-item ">
+        <a href="/1.7/development/coding_standards/commits_and_pull_requests/">
+        Commits &amp; Pull Requests
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/development/native_module_translation/" title="Native module translation" class="dd-item ">
+        <a href="/1.7/development/native_module_translation/">
+        Native module translation
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/development/database/" title="Database" class="dd-item
+        
+        
+        
+        ">
+      <a href="/1.7/development/database/">
+          Database
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/development/database/dbquery/" title="DBQuery class" class="dd-item ">
+        <a href="/1.7/development/database/dbquery/">
+        DBQuery class
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/development/database/objectmodel/" title="ObjectModel class" class="dd-item ">
+        <a href="/1.7/development/database/objectmodel/">
+        ObjectModel class
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/development/database/structure/" title="Database structure" class="dd-item ">
+        <a href="/1.7/development/database/structure/">
+        Database structure
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/development/prestashop_architecture/" title="The PrestaShop architecture" class="dd-item ">
+        <a href="/1.7/development/prestashop_architecture/">
+        The PrestaShop architecture
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+              
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/testing/" title="Testing" class="dd-item
+        
+        
+        
+        ">
+      <a href="/1.7/testing/">
+          <b>3. </b>Testing
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+              
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/modules/" title="Modules" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/1.7/modules/">
+          <b>4. </b>Modules
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/modules/creation/" title="Getting started" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/1.7/modules/creation/">
+          Getting started
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/modules/creation/module_file_structure/" title="Folder structure" class="dd-item ">
+        <a href="/1.7/modules/creation/module_file_structure/">
+        Folder structure
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/modules/creation/adding_configuration_page/" title="Adding a configuration page" class="dd-item active">
+        <a href="/1.7/modules/creation/adding_configuration_page/">
+        Adding a configuration page
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/modules/creation/displaying_content_in_front_office/" title="Displaying content on the front office" class="dd-item ">
+        <a href="/1.7/modules/creation/displaying_content_in_front_office/">
+        Displaying content on the front office
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/modules/creation/enabling_auto_update/" title="Enabling the Auto-Update" class="dd-item ">
+        <a href="/1.7/modules/creation/enabling_auto_update/">
+        Enabling the Auto-Update
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/modules/creation/module_translation/" title="Module translation" class="dd-item ">
+        <a href="/1.7/modules/creation/module_translation/">
+        Module translation
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/modules/concepts/" title="Extension concepts" class="dd-item
+        
+        
+        
+        ">
+      <a href="/1.7/modules/concepts/">
+          Extension concepts
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/modules/concepts/configuration/" title="Configuration" class="dd-item ">
+        <a href="/1.7/modules/concepts/configuration/">
+        Configuration
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/modules/concepts/hooks/" title="Hooks" class="dd-item
+        
+        
+        
+        ">
+      <a href="/1.7/modules/concepts/hooks/">
+          Hooks
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/modules/concepts/hooks/list_of_hooks/" title="List of hooks" class="dd-item ">
+        <a href="/1.7/modules/concepts/hooks/list_of_hooks/">
+        List of hooks
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/modules/concepts/hooks/use_hooks_on_modern_pages/" title="Use hooks on modern pages" class="dd-item ">
+        <a href="/1.7/modules/concepts/hooks/use_hooks_on_modern_pages/">
+        Use hooks on modern pages
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/modules/concepts/hooks/alter_forms_on_modern_pages/" title="Alter forms on modern pages" class="dd-item ">
+        <a href="/1.7/modules/concepts/hooks/alter_forms_on_modern_pages/">
+        Alter forms on modern pages
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/modules/concepts/widgets/" title="Widgets" class="dd-item ">
+        <a href="/1.7/modules/concepts/widgets/">
+        Widgets
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/modules/concepts/controllers/" title="Controllers" class="dd-item
+        
+        
+        
+        ">
+      <a href="/1.7/modules/concepts/controllers/">
+          Controllers
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/modules/concepts/controllers/front_controllers/" title="Front controllers" class="dd-item ">
+        <a href="/1.7/modules/concepts/controllers/front_controllers/">
+        Front controllers
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/modules/concepts/overrides/" title="Overrides" class="dd-item ">
+        <a href="/1.7/modules/concepts/overrides/">
+        Overrides
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/modules/paiement/" title="Payment modules" class="dd-item
+        
+        
+        
+        ">
+      <a href="/1.7/modules/paiement/">
+          Payment modules
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/modules/templating/" title="Templates in modules" class="dd-item
+        
+        
+        
+        ">
+      <a href="/1.7/modules/templating/">
+          Templates in modules
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/modules/testing/" title="Testing" class="dd-item
+        
+        
+        
+        ">
+      <a href="/1.7/modules/testing/">
+          Testing
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+              
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/themes/" title="Themes" class="dd-item
+        
+        
+        
+        ">
+      <a href="/1.7/themes/">
+          <b>5. </b>Themes
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/themes/guidelines/" title="Guidelines and coding standards" class="dd-item ">
+        <a href="/1.7/themes/guidelines/">
+        Guidelines
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/themes/starter_theme/" title="Starter Theme" class="dd-item
+        
+        
+        
+        ">
+      <a href="/1.7/themes/starter_theme/">
+          Starter Theme
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/themes/getting_started/" title="Getting started with theme development" class="dd-item
+        
+        
+        
+        ">
+      <a href="/1.7/themes/getting_started/">
+          Getting started
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/themes/getting_started/setting_up_your_local_environment/" title="Setting up your local environment" class="dd-item ">
+        <a href="/1.7/themes/getting_started/setting_up_your_local_environment/">
+        Set up your local environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/themes/hooks/" title="Theme Hooks" class="dd-item
+        
+        
+        
+        ">
+      <a href="/1.7/themes/hooks/">
+          Theme Hooks
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/themes/javascript_events/" title="Javascript events" class="dd-item
+        
+        
+        
+        ">
+      <a href="/1.7/themes/javascript_events/">
+          Javascript events
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/themes/migration_from_16/" title="Migrating from PrestaShop 1.6" class="dd-item ">
+        <a href="/1.7/themes/migration_from_16/">
+        Migrating from 1.6
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/themes/rtl/" title="RTL support" class="dd-item ">
+        <a href="/1.7/themes/rtl/">
+        RTL support
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+              
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/documentation/" title="Documentation" class="dd-item
+        
+        
+        
+        ">
+      <a href="/1.7/documentation/">
+          <b>6. </b>Documentation
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/documentation/why/" title="Why write documentation" class="dd-item ">
+        <a href="/1.7/documentation/why/">
+        Why write documentation
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/1.7/documentation/how/" title="How to contribute" class="dd-item ">
+        <a href="/1.7/documentation/how/">
+        How to contribute
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/1.7/documentation/shortcodes/" title="Shortcodes" class="dd-item
+        
+        
+        
+        ">
+      <a href="/1.7/documentation/shortcodes/">
+          Shortcodes
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+      
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p><a href="https://github.com/PrestaShop/PrestaShop/"><i class="fa fa-github" aria-hidden="true"></i> PrestShop on GitHub</a></p>
+<p><a href="http://forge.prestashop.com/secure/CreateIssue!default.jspa"><i class="fa fa-bug" aria-hidden="true"></i> Report a bug</a></p>
+<p><a href="https://gitter.im/PrestaShop/General"><i class="fa fa-comment" aria-hidden="true"></i> Join us on Gitter</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+      <section id="body">
+      <div id="overlay"></div>
+      <div class="padding highlightable">
+        
+<div>
+  <div id="top-bar">
+    
+      
+      
+      
+      <div id="top-github-link">
+        <a class="github-link" title='Improve this page' href="https://github.com/PrestaShop/docs/edit/hugo/src/content/1.7/modules/creation/adding_configuration_page.md" target="blank">
+          <i class="fa fa-pencil"></i>
+          <span id="top-github-link-text">Improve this page</span>
+        </a>
+        <a class="how-to-improve" href="/1.7/documentation/how/">
+          <i class="fa fa-question-circle"></i>
+          <span>How</span>
+        </a>
+      </div>
+      
+    
+    <div id="breadcrumbs" itemscope="" itemtype="http://schema.org/breadcrumb">
+      <span id="sidebar-toggle-span">
+        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+          <i class="fa fa-bars"></i>
+        </a>
+      </span>
+      <span class="links">
+        
+            
+            
+              
+              
+            
+            
+              
+              
+            
+            
+              
+              
+            
+            
+              
+              
+            
+            
+              <a href='/'>Home</a> > <a href='/1.7/'>1.7</a> > <a href='/1.7/modules/'>Modules</a> > <a href='/1.7/modules/creation/'>Getting started</a> > Adding a configuration page
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+      </span>
+    </div>
+  </div>
+</div>
+
+
+
+
+        
+
+        
+        
+          
+            <div id="toc">
+  <div class="wrapper">
+    <div id="toc-title">Table of Contents</div>
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#adding-a-configuration-page">Adding a configuration page</a>
+<ul>
+<li><a href="#the-getcontent-method">The getContent() method</a></li>
+<li><a href="#displaying-the-form">Displaying the form</a></li>
+<li><a href="#diving-in-displayform">Diving in displayForm()</a></li>
+<li><a href="#using-helperform">Using HelperForm</a></li>
+</ul></li>
+</ul>
+</nav>
+
+    <div id="navigation">
+  
+  
+
+  
+
+  
+    
+    
+      
+        
+        
+      
+      
+      
+      
+        
+      
+      
+
+      
+        
+    
+    
+      
+        
+        
+      
+      
+      
+      
+        
+      
+      
+
+      
+        
+    
+    
+      
+        
+          
+          
+        
+      
+      
+      
+      
+        
+      
+      
+
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+    
+  
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+        
+      
+      
+
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+        
+      
+      
+      
+      
+        
+      
+      
+
+      
+        
+    
+    
+      
+        
+        
+      
+      
+      
+      
+      
+
+      
+        
+    
+    
+      
+        
+          
+          
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+          
+          
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+        
+      
+      
+
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+        
+      
+      
+
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+        
+      
+      
+
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+        
+    
+    
+      
+        
+      
+      
+      
+      
+      
+
+      
+    
+  
+      
+    
+  
+      
+    
+  
+      
+    
+  
+
+  
+  
+  <a class="nav nav-next" href="/1.7/modules/creation/displaying_content_in_front_office/" title="Displaying content on the front office" style="margin-right: 0px;">
+    <i class="fa fa-chevron-right"></i>
+    Next article
+  </a>
+  
+</div>
+
+  </div>
+</div>
+
+          
+        
+
+        <div id="body-inner">
+
+          
+
+
+
+
+
+
+<h1 id="adding-a-configuration-page">Adding a configuration page</h1>
+
+<p>Your module can get a &ldquo;Configure&rdquo; link in the back office module list,
+and therefore let the user change some settings. This &ldquo;Configure&rdquo; link
+appears with addition of the <code>getContent()</code> method to your main class.
+This is a standard PrestaShop method: its sole existence sends a message
+to the back office, saying &ldquo;there&rsquo;s a configuration page in this module,
+display the configuration link&rdquo;.</p>
+
+<p>But having a <code>getContent()</code> public method in the <code>MyModule</code> object does
+only make the &ldquo;Configure&rdquo; link appear; it does not create the
+configuration page out of nowhere. We are going to explain how to create
+one, where we will be able to edit the content of the <code>MYMODULE_NAME</code>
+variable that we stored in the <code>ps_configuration</code> data table.</p>
+
+<h2 id="the-getcontent-method">The getContent() method</h2>
+
+<p>First, here is the complete code for the getContent() method:</p>
+
+<pre><code class="language-php">public function getContent()
+{
+    $output = null;
+
+    if (Tools::isSubmit('submit'.$this-&gt;name)) {
+        $myModuleName = strval(Tools::getValue('MYMODULE_NAME'));
+
+        if (
+            !$myModuleName ||
+            empty($myModuleName) ||
+            !Validate::isGenericName($myModuleName)
+        ) {
+            $output .= $this-&gt;displayError($this-&gt;l('Invalid Configuration value'));
+        } else {
+            Configuration::updateValue('MYMODULE_NAME', $myModuleName);
+            $output .= $this-&gt;displayConfirmation($this-&gt;l('Settings updated'));
+        }
+
+        return $output.$this-&gt;displayForm();
+    }
+}
+</code></pre>
+
+<p>The <code>getContent()</code> method is the first one to be called when the
+configuration page is loaded. Therefore, we use it to first update any
+value that might have been submitted by the form that the configuration
+page contains.</p>
+
+<p>Here is a line by line explanation:</p>
+
+<ul>
+<li><code>Tools::isSubmit()</code> is a PrestaShop-specific method, which checks if
+the indicated form has been validated. In this case, if the
+configuration form has not yet been validated, the whole <code>if()</code>
+block is skipped and PrestaShop will only use the last line, which
+displays the configuration with the current values, as generated by
+the <code>displayForm()</code> method.</li>
+<li><code>Tools:getValue()</code> is a PrestaShop-specific method, which retrieve
+the content of the POST or GET array in order to get the value of
+the specified variable. In this case, we retrieve the value of the
+<code>MYMODULE_NAME</code> form variable, turn its value into a text string
+using the <code>strval()</code> method, and stores it in the <code>$myModuleName</code>
+PHP variable.</li>
+<li>We then check for the existence of actual content in
+<code>$myModuleName</code>, including the use of <code>Validate::isGenericName()</code>.
+The Validate object contains many data validation methods, among
+which is <code>isGenericName()</code>, a method that helps you keep only
+strings that are valid PrestaShop names – meaning, a string that
+does not contain special characters, for short.</li>
+<li>If any of these checks fail, the configuration will open with an
+error message, indicating that the form validation failed. The
+<code>$output variable</code>, which contains the final rendition of the HTML
+code that makes the configuration page, thus begins with an error
+message, created using PrestaShop&rsquo;s <code>displayError()</code> method. This
+method returns the correct HTML code for our need, and since that
+code is first in \$output, this means the configuration will open
+with that message.</li>
+<li>If all these checks are successful, this means we can store the
+value in our database. As we saw earlier in this tutorial, the
+<code>Configuration</code> object has just the method we need: <code>updateValue()</code>
+will store the new value for <code>MYMODULE_NAME</code> in the configuration
+data table. To that end, we add a friendly message to the user,
+indicating that the value has indeed been saved: we use PrestaShop&rsquo;s
+<code>displayConfirmation()</code> method to add that message as the first data
+in the \$output variable – and therefore, at the top of the page.</li>
+<li>Finally, we use the custom <code>displayForm()</code> method (which we are
+going to create and explain in the next section) in order to add
+content to <code>$output</code> (whether the form was submitted or not), and
+return that content to the page. Note that we could have included
+the code for <code>displayForm()</code> right within <code>getContent()</code>, but chose
+to separate the two for readability and separation of concerns.</li>
+</ul>
+
+<p>This form-validation code is nothing new for PHP developers, but uses
+some of the PrestaShop methods that you will very regularly use.</p>
+
+<h2 id="displaying-the-form">Displaying the form</h2>
+
+<p>The configuration form itself is displayed with the <code>displayForm()</code>
+method. Here is its code, which we are going to explain after the jump:</p>
+
+<pre><code class="language-php">public function displayForm()
+{
+    // Get default language
+    $defaultLang = (int)Configuration::get('PS_LANG_DEFAULT');
+
+    // Init Fields form array
+    $fieldsForm[0]['form'] = [
+        'legend' =&gt; [
+            'title' =&gt; $this-&gt;l('Settings'),
+        ],
+        'input' =&gt; [
+            [
+                'type' =&gt; 'text',
+                'label' =&gt; $this-&gt;l('Configuration value'),
+                'name' =&gt; 'MYMODULE_NAME',
+                'size' =&gt; 20,
+                'required' =&gt; true
+            ]
+        ],
+        'submit' =&gt; [
+            'title' =&gt; $this-&gt;l('Save'),
+            'class' =&gt; 'btn btn-default pull-right'
+        ]
+    ];
+
+    $helper = new HelperForm();
+
+    // Module, token and currentIndex
+    $helper-&gt;module = $this;
+    $helper-&gt;name_controller = $this-&gt;name;
+    $helper-&gt;token = Tools::getAdminTokenLite('AdminModules');
+    $helper-&gt;currentIndex = AdminController::$currentIndex.'&amp;configure='.$this-&gt;name;
+
+    // Language
+    $helper-&gt;default_form_language = $defaultLang;
+    $helper-&gt;allow_employee_form_lang = $defaultLang;
+
+    // Title and toolbar
+    $helper-&gt;title = $this-&gt;displayName;
+    $helper-&gt;show_toolbar = true;        // false -&gt; remove toolbar
+    $helper-&gt;toolbar_scroll = true;      // yes - &gt; Toolbar is always visible on the top of the screen.
+    $helper-&gt;submit_action = 'submit'.$this-&gt;name;
+    $helper-&gt;toolbar_btn = [
+        'save' =&gt; [
+            'desc' =&gt; $this-&gt;l('Save'),
+            'href' =&gt; AdminController::$currentIndex.'&amp;configure='.$this-&gt;name.'&amp;save'.$this-&gt;name.
+            '&amp;token='.Tools::getAdminTokenLite('AdminModules'),
+        ],
+        'back' =&gt; [
+            'href' =&gt; AdminController::$currentIndex.'&amp;token='.Tools::getAdminTokenLite('AdminModules'),
+            'desc' =&gt; $this-&gt;l('Back to list')
+        ]
+    ];
+
+    // Load current value
+    $helper-&gt;fields_value['MYMODULE_NAME'] = Configuration::get('MYMODULE_NAME');
+
+    $helper-&gt;generateForm($fieldsForm);
+}
+</code></pre>
+
+<p>While this might look like a huge block of code for a single value to
+change, this block actually uses some of PrestaShop&rsquo;s method to make it
+easier to build forms, most notably the <code>HelperForm</code> object.</p>
+
+<h2 id="diving-in-displayform">Diving in displayForm()</h2>
+
+<p>Let&rsquo;s run down that method:</p>
+
+<ol>
+<li>Using the <code>Configuration::get()</code> method, we retrieve the value of
+the currently chosen language (&rdquo;<code>PS_LANG_DEFAULT</code>&rdquo;). For security
+reasons, we cast the variable into an integer using (<code>int</code>).</li>
+<li>In preparation for the generation of the form, we must build an
+array of the various titles, textfields and other form specifics.<br />
+To that end, we create the <code>$fieldsForm</code> variable, which will
+contain a multidimensional array. Each of the arrays it features
+contains the detailed description of the tags the form must contain.
+From this variable, PrestaShop will render the HTML form as it is
+described.<br />
+In this example, we define three tags (<code>&lt;legend&gt;</code>, <code>&lt;input&gt;</code> and
+<code>&lt;submit&gt;</code>) and their attributes using arrays. The format is quite
+easy to get: the legend and submit arrays simply contain the
+attributes to each tag, while the input contains as many tags are
+needed, each being in turn an array which contains the
+necessary attributes. For instance:</li>
+</ol>
+
+<pre><code class="language-php">'input' =&gt; [
+    [
+        'type' =&gt; 'text',
+        'label' =&gt; $this-&gt;l('Configuration value'),
+        'name' =&gt; 'MYMODULE_NAME',
+        'size' =&gt; 20,
+        'required' =&gt; true
+    ]
+]
+</code></pre>
+
+<p>&hellip;generates the following HTML tags:</p>
+
+<pre><code class="language-html">&lt;label&gt;Configuration value &lt;/label&gt;
+&lt;div class=&quot;margin-form&quot;&gt;
+  &lt;input id=&quot;MYMODULE_NAME&quot; class=&quot;&quot; type=&quot;text&quot; size=&quot;20&quot; value=&quot;my friend&quot; name=&quot;MYMODULE_NAME&quot;&gt;
+  &lt;sup&gt;*&lt;/sup&gt;
+&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;
+</code></pre>
+
+<p>As you can see, PrestaShop is quite clever, and generates all the code
+that is needed to obtain a useful form.<br />
+Note that the value of the main array is actually retrieved later in the
+form generation code.</p>
+
+<ol>
+<li>We then create an instance of the <code>HelperForm</code> class. This section
+of the code is explained in the next section of this chapter.</li>
+<li>Once the <code>HelperForm</code> settings are all in place, we generate the
+form based on the content of the <code>$fieldsForm</code> variable.</li>
+</ol>
+
+<h2 id="using-helperform">Using HelperForm</h2>
+
+<p><code>HelperForm</code> is one of the helper methods that were added with
+PrestaShop 1.5, along with <code>HelperOptions</code>, <code>HelperList</code>, <code>HelperView</code>
+and <code>HelperHelpAccess</code>. They enable you to generate standard HTML
+elements for the back office as well as for module configuration pages.
+You can get more information about Helper classes in the &ldquo;Helpers&rdquo;
+chapter of this developer guide, with a page dedicated to <code>HelperForm</code>.</p>
+
+<p>Here is our sample code, as a reminder:</p>
+
+<pre><code class="language-php">$helper = new HelperForm();
+
+// Module, Token and currentIndex
+$helper-&gt;module = $this;
+$helper-&gt;name_controller = $this-&gt;name;
+$helper-&gt;token = Tools::getAdminTokenLite('AdminModules');
+$helper-&gt;currentIndex = AdminController::$currentIndex.'&amp;configure='.$this-&gt;name;
+
+// Language
+$helper-&gt;default_form_language = $defaultLang;
+$helper-&gt;allow_employee_form_lang = $defaultLang;
+
+// title and Toolbar
+$helper-&gt;title = $this-&gt;displayName;
+$helper-&gt;show_toolbar = true;        // false -&gt; remove toolbar
+$helper-&gt;toolbar_scroll = true;      // yes - &gt; Toolbar is always visible on the top of the screen.
+$helper-&gt;submit_action = 'submit'.$this-&gt;name;
+$helper-&gt;toolbar_btn = [
+    'save' =&gt; [
+        'desc' =&gt; $this-&gt;l('Save'),
+        'href' =&gt; AdminController::$currentIndex.'&amp;configure='.$this-&gt;name.'&amp;save'.$this-&gt;name.
+        '&amp;token='.Tools::getAdminTokenLite('AdminModules'),
+    ],
+    'back' =&gt; [
+        'href' =&gt; AdminController::$currentIndex.'&amp;token='.Tools::getAdminTokenLite('AdminModules'),
+        'desc' =&gt; $this-&gt;l('Back to list')
+    ]
+];
+
+// Load current value
+$helper-&gt;fields_value['MYMODULE_NAME'] = Configuration::get('MYMODULE_NAME');
+
+return $helper-&gt;generateForm($fieldsForm);
+</code></pre>
+
+<p>Our example uses several of <code>HelperForm</code>&rsquo;s attributes: they need to be
+set before we generate the form itself from the <code>$fieldsForm</code> variable:</p>
+
+<ul>
+<li><code>$helper-&gt;module</code>: requires the instance of the module that will use
+the form.</li>
+<li><code>$helper-&gt;name_controller</code>: requires the name of the module.</li>
+<li><code>$helper-&gt;token</code>: requires a unique token for the module.
+<code>getAdminTokenLite()</code> helps us generate one.</li>
+<li><code>$helper-&gt;currentIndex</code>:</li>
+<li><code>$helper-&gt;default_form_language</code>: requires the default language for
+the shop.</li>
+<li><code>$helper-&gt;allow_employee_form_lang</code>: requires the default language
+for the shop.</li>
+<li><code>$helper-&gt;title</code>: requires the title for the form.</li>
+<li><code>$helper-&gt;show_toolbar</code>: requires a boolean value – whether the
+toolbar is displayed or not.</li>
+<li><code>$helper-&gt;toolbar_scroll</code>: requires a boolean value – whether the
+toolbar is always visible when scrolling or not.</li>
+<li><code>$helper-&gt;submit_action</code>: requires the action attribute for the
+form&rsquo;s <code>&lt;submit&gt;</code> tag.</li>
+<li><code>$helper-&gt;toolbar_btn</code>: requires the buttons that are displayed in
+the toolbar. In our example, the &ldquo;Save&rdquo; button and the
+&ldquo;Back&rdquo; button.</li>
+<li><code>$helper-&gt;fields_value[]</code>: this is where we can define the value of
+the named tag.</li>
+</ul>
+
+<p>Finally, after all is set and done, we can call the <code>generateForm()</code>
+method, which will take care of putting it all together and, as its name
+says, generate the form that the user will use to configure the module&rsquo;s
+settings.</p>
+
+<p>Here is the rendition of the form as it is presently written – which you
+can see by yourself by clicking on the &ldquo;Configure&rdquo; link for the module
+in the back office:</p>
+
+<p>Change the value to whichever you like, click on the &ldquo;Save&rdquo; button, then
+go reload the homepage: your module is indeed updated with the new
+string!</p>
+
+
+<footer class="last-updated">
+	
+<div>
+  Last updated on April 24, 2018
+  :
+  <a href="https://github.com/PrestaShop/docs/commit/9867500f3e026b2a360b77e223d37a8fd57ec1da">"Coding style" (9867500)</a>
+  
+</div>
+
+
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1528392868"></script>
+    <script src="/js/perfect-scrollbar.min.js?1528392868"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1528392868"></script>
+    <script src="/js/jquery.sticky.js?1528392868"></script>
+    <script src="/js/featherlight.min.js?1528392868"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1528392868"></script>
+    <script src="/js/highlight.pack.js?1528392868"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js?1528392868"></script>
+    <script src="/js/learn.js?1528392868"></script>
+    <script src="/js/hugo-learn.js?1528392868"></script>
+
+    <link href="/mermaid/mermaid.css?1528392868" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1528392868"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-2753771-44', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+  </body>
+</html>
+
